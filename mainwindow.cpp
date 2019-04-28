@@ -641,7 +641,7 @@ void MainWindow::subscription_download_finish_slot(QNetworkReply *p_reply)
     }
     else
     {
-        print_text_to_window(QObject::tr("download config %s error.").arg(subscription_id));
+        print_text_to_window(QObject::tr("download config %1 error.").arg(subscription_id));
         //print_text_to_window(QObject::tr("network error"));
     }
     save_config_to_file();
@@ -667,7 +667,7 @@ void MainWindow::custom_menu_update_subscription_slot()
         QString url = QString::fromUtf8(qbytedata);
         QFileInfo finfo(it);
         QString filename = finfo.fileName();
-        print_text_to_window(QObject::tr("Found subscription config %s .").arg(filename));
+        print_text_to_window(QObject::tr("Found subscription config %1").arg(filename));
         get_subscription_url(url, filename);
     }
 }
